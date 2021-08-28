@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  ul {
+    list-style: none;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+body {
+  font-family: "Hina Mincho", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 100vw;
+  min-height: 500vh;
+}
+
+.flex {
+  display: flex;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  justify-content: space-between;
+  width: 100vw;
+  font-weight: 400;
+  .logo {
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    .nav-logo {
+      height: 140%; // change later
+    }
+  }
+  .nav-list {
+    display: flex;
+    align-items: center;
+
+    li {
+      margin-left: 2rem;
+    }
+    .search-bar {
+      cursor: pointer;
+      display: flex;
+      gap: 0.3rem;
+      input {
+        cursor: pointer;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+
+.birds {
+  padding: 6rem 10rem 3rem 10rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 300px));
+  gap: 5px;
+  background: #f3f7fb;
+  transform: translateY(-10px);
+  h1 {
+    position: absolute;
+    left: 10rem;
+    top: 1.5rem;
+    text-transform: uppercase;
+  }
+  .bird-container {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    overflow: hidden;
+    .bird-name {
+      color: #608520;
+      padding: 1rem 1rem;
+      border: 1px solid #e3e7ec;
+    }
+    img {
+      vertical-align: middle;
+      width: 100%;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: 0.3s ease-in-out;
+      transition: 0.4s ease-in-out;
+      &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+      &:hover ~ .bird-name {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.infos {
+  padding: 6rem 2rem 3rem 6rem;
+  h1,
+  h3 {
+    text-transform: capitalize;
+    color: #c5541c;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  .infos-container {
+    display: flex;
+    margin-top: 2rem;
+    width: calc(301px * 3);
+    overflow: hidden;
+    .infos-slider {
+      display: flex;
+      gap: 1px;
+      .info-container {
+        img {
+          width: 300px;
+        }
+        .info {
+          padding: 0rem 1rem;
+          h2 {
+            font-family: "Noto Serif", serif;
+            font-size: 1.2rem;
+            font-weight: normal;
+            &:hover {
+              color: #bedb8b;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  .questions {
+    margin-left: 2rem;
+    ul {
+      li {
+        font-weight: normal;
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+        a {
+          text-transform: capitalize;
+          font-size: 1.7rem;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.images {
+  width: 100%;
+  h1 {
+    text-align: center;
+    color: #12568f;
+    margin-bottom: 2rem;
+  }
+  .images-container {
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    .image {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
