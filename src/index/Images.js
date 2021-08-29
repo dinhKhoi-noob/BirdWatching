@@ -3,24 +3,25 @@ import FakeInfors from "../FakeData";
 
 const Images = ({ name, image }) => {
   const [birds, setBirds] = useState(FakeInfors);
+  //temp value for birds img
+  const tempBirds = birds.filter((bird, index) => {
+    return index < 14;
+  });
+  console.log(tempBirds);
   return (
     <div className="images">
       <h1>Bird Images</h1>
       <div className="images-container">
-        {birds.map((bird) => {
-          console.log(bird);
+        {tempBirds.map((tempBird, index) => {
           return (
-            <div className="image">
-              <img src={bird.image[0]} alt="" />
-              <img
-                src="https://images.pexels.com/photos/1181725/pexels-photo-1181725.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                alt=""
-              />
-              <img
-                src="https://images.pexels.com/photos/3727464/pexels-photo-3727464.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                alt=""
-              />
-            </div>
+            <a
+              key={index}
+              href="../img/hero-img.jpg"
+              className={"img-" + index}
+              style={{
+                backgroundImage: `url(${tempBird.image[0]})`,
+              }}
+            ></a>
           );
         })}
       </div>
